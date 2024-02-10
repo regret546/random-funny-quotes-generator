@@ -1,0 +1,136 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --clr--yellow: hsl(46, 99%, 52%);
+  --clr--dark-blue: hsl(220, 14%, 8%);
+  --clr--white: hsl(0, 0%, 100%);
+}
+
+:root {
+  /* Font Family */
+  --ff--primary: "Poppins", sans-serif;
+  /* Font Size */
+  --fs--regular: 18px;
+  /* Font Weight */
+  --fw--regular: 300;
+  --fw--bold: 500;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--ff--primary);
+  font-size: var(--fw--regular);
+  background-color: var(--clr--yellow);
+  color: var(--clr--dark-blue);
+}
+
+.card {
+  max-width: 700px;
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--clr--white);
+  margin: 1rem;
+  border-radius: 1rem;
+}
+.card img {
+  width: 100px;
+  height: 100px;
+}
+.card p {
+  text-align: center;
+  width: 80%;
+  transition: opacity 0.5s ease;
+  font-size: 1.2rem;
+}
+.card button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--clr--yellow);
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  font-weight: var(--fw--bold-);
+  font-size: 1.5rem;
+}
+.card button:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 46.875em) {
+  .card {
+    max-width: 350px;
+  }
+  .card button,
+  .card p {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */
