@@ -1,10 +1,14 @@
 const submitBtn = document.querySelector("#submitBtn");
 const mainJoke = document.querySelector("#mainJoke");
 
+window.onload = async function () {
+  mainJoke.textContent = await generateJokes();
+};
+
 const generateJokes = async function () {
   try {
     const res = await axios.get(
-      "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
+      "https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun,Spooky?type=single"
     );
     const jokes = res.data.joke;
     return jokes;
@@ -20,5 +24,5 @@ submitBtn.addEventListener("click", function (e) {
   setTimeout(async function () {
     mainJoke.textContent = await generateJokes();
     mainJoke.style.opacity = "1";
-  }, 300); // Delay in milliseconds, should match transition duration
+  }, 200); // Delay in milliseconds, should match transition duration
 });

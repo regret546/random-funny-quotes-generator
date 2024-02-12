@@ -96,6 +96,7 @@ body {
 .card {
   max-width: 700px;
   display: grid;
+  grid-template-columns: 1fr;
   justify-items: center;
   gap: 2rem;
   padding: 2rem;
@@ -111,7 +112,7 @@ body {
   text-align: center;
   width: 80%;
   transition: opacity 0.5s ease;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .card button {
   cursor: pointer;
@@ -127,10 +128,12 @@ body {
 }
 @media only screen and (max-width: 46.875em) {
   .card {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 350px;
   }
   .card button,
   .card p {
+    width: 100%;
     font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
